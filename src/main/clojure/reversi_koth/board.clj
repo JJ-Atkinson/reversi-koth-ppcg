@@ -108,8 +108,16 @@
   (let [possible-capture-rays (points-reachable-from point (size-of board))
         captured-points (mapcat 
                           (fn [capt-ray]
-                            (take-while #(= (opposite-player player) (get-in-board board %))
-                                        (drop 1 capt-ray)))
+                            (let [[possible-capture other-end] 
+                                    (split-with #(= 
+                                                   (opposite-player player)
+                                                   (get-in-board board %)) 
+                                                (drop 1 capt-ray))]
+                              (if (and (not-empty other-end)
+                                       (= (get-in-board board (first other-end))
+                                          player))
+                                possible-capture
+                                [])))
                           possible-capture-rays)]
     (update-points-to board (conj captured-points point) player)))
 
