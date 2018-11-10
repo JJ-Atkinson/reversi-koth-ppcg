@@ -22,7 +22,7 @@
 ;; @@
 
 ;; **
-;;; This is a board view. It was built with reference to http://gorilla-repl.org/renderer.html
+;;; This is a board view. It was built with (fun &) reference to http://gorilla-repl.org/renderer.html
 ;; **
 
 ;; @@

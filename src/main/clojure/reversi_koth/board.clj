@@ -73,7 +73,7 @@
   (reduce #(update-point-to %1 %2 new-type) board points))
 
 (defn new-game-board [side-length]
-  "Setup a new board with the inital locations filled."
+  "Setup a new board with the initial locations filled."
   (let [center (/ side-length 2)]
     (-> (gen-empty-board side-length)
         (update-point-to [(- center 1) (- center 1)] :white)
@@ -89,7 +89,7 @@
     (map first (filter (fn [[idx piece]] (predicate piece idx)) positions))))
 
 (defn moves-for-player [player board]
-  "Determin all valid moves for `player`"
+  "Determine all valid moves for `player`"
   (let [player-posititions (filter-board (fn [piece idx] (= piece player)) board)
         possible-moves (mapcat #(points-reachable-from % (size-of board)) player-posititions)
         valid-moves (mapcat (fn [move-ray]
@@ -128,3 +128,5 @@
                    (fn [type _] (= type player))
                    board))])
        [:black :white]))
+
+
