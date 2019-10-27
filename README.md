@@ -1,14 +1,3 @@
 # reversi-koth
 
-A Clojure library designed to ... well, that part is up to you.
-
-## Usage
-
-FIXME
-
-## License
-
-Copyright © 2017 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+Complete and tested implementation of Reversi (Othello) in Clojure. Originally destined for codegolf stack exchange as a King of the Hill competition until I learned that Reversi was strongly solved.
